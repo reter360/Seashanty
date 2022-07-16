@@ -22,7 +22,7 @@ public class Main
         @SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.SERVER)
         public static CommonProxy proxy;
 
-        public static final CreativeTabs TUTORIAL = new SeaShantyTab();
+        public static final CreativeTabs SEASHANTY = new SeaShantyTab();
 
         //public static File config;
 

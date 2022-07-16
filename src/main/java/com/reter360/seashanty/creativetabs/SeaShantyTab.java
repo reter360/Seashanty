@@ -4,8 +4,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class SeaShantyTab extends CreativeTabs {
-    public SeaShantyTab(){super("SeaShanty");
-    this.setBackgroundImageName("seashanty.png"); }
+    public SeaShantyTab(){ super("SeaShanty"); }
 
     @Override
     public ItemStack getTabIconItem() { return new ItemStack(Items.APPLE); }
