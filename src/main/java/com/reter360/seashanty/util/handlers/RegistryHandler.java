@@ -1,5 +1,4 @@
 package com.reter360.seashanty.util.handlers;
-import com.reter360.seashanty.Main;
 import com.reter360.seashanty.init.ItemInit;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;

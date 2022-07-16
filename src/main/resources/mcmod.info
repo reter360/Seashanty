@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
+  "modid": "seashanty",
   "name": "SeaShanty",
   "description": "Sail the high-seas Yo-Ho!",
   "version": "1.0.0",
   "mcversion": "1.12.2",
-  "url": "",
+  "url": "https://github.com/reter360/Seashanty",
   "updateUrl": "",
   "authorList": ["reter360"],
-  "credits": "The Forge and FML guys, for making this example",
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -1,0 +1,16 @@
+#Items
+item.sail.name=Sail
+
+#Tools
+item.wooden_paddle.name=Wooden Paddle
+item.iron_paddle.name=Iron Paddle
+
+#Blocks
+tile.mast.name=Mast
+tile.seat.name=Seat
+tile.rudder.name=Rudder
+tile.wooden_oar.name=Wooden Oar
+tile.iron_oar.name=Iron Oar
+
+#CreativeTab
+itemGroup.SeaShanty=SeaShanty
