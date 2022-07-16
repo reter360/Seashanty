@@ -1,31 +1,46 @@
 package com.reter360.seashanty;
-
-import net.minecraft.init.Blocks;
+import com.reter360.seashanty.creativetabs.SeaShantyTab;
+import com.reter360.seashanty.proxy.CommonProxy;
+import com.reter360.seashanty.util.handlers.RegistryHandler;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.Logger;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = Main.MODID, name = Main.NAME, version = Main.VERSION)
+@Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
 public class Main
 {
-    public static final String MODID = "examplemod";
-    public static final String NAME = "Example Mod";
-    public static final String VERSION = "1.0";
+        @Instance
+        public static Main instance;
 
-    private static Logger logger;
+        @SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.SERVER)
+        public static CommonProxy proxy;
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
-        logger = event.getModLog();
+        public static final CreativeTabs TUTORIAL = new SeaShantyTab();
+
+        //public static File config;
+
+        static { FluidRegistry.enableUniversalBucket(); }
+
+        @EventHandler
+        public static void preInit(FMLPreInitializationEvent event){
+            RegistryHandler.preInitRegistries(event); }
+
+        @EventHandler
+        public static void init(FMLInitializationEvent event){
+            RegistryHandler.initRegistries(event); }
+
+        @EventHandler
+        public static void postInit(FMLPostInitializationEvent event){
+            RegistryHandler.postInitRegistries(event); }
+
+        @EventHandler
+        public static void serverInit(FMLServerStartingEvent event){
+            RegistryHandler.serverRegistries(event); }
     }
-
-    @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-    }
-}
